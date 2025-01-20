@@ -2,20 +2,28 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Pagenotfoun from "./components/Pagenotfoun";
 import Register from "./components/Register";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 const App = () => {
   
 
   return (
-    
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Homepage/>}/>
+        <Route path="/home" element={<Homepage/>}/>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
-        
-
-        <Route path="*" element={<Pagenotfoun/>}/>
+        <Route path="*" element={<Pagenotfoun/>} />
       </Routes>
+      <Footer />
     </Router>
+
+    
+    
+    
   );
 };
 
